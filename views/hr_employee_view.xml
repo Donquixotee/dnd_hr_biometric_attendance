@@ -10,13 +10,36 @@
             <xpath expr="//group[@name='identification_group']" position="inside">
                 <field name="card_number"/>
                 <field name="biometric_sync_state"/>
-                <div class="text-warning" colspan="2" invisible="biometric_sync_state != 'no_badge'">
-                    Fill in the Badge ID so this employee is sent to the attendance readers.
-                </div>
             </xpath>
             <!-- Adding a new Biometric Devices tab after HR Settings -->
             <xpath expr="//page[@name='hr_settings']" position="after">
                 <page string="Biometric Devices">
+                    <group>
+                        <group>
+                            <field name="barcode" string="Badge ID"/>
+                            <field name="biometric_sync_state"/>
+                        </group>
+                    </group>
+                    <div class="alert alert-warning" role="alert"
+                         invisible="biometric_sync_state != 'no_badge'">
+                        Fill in the Badge ID above. Until then this employee is not sent to the
+                        attendance readers and their punches cannot be recorded.
+                    </div>
+                    <div class="alert alert-info" role="alert"
+                         invisible="biometric_sync_state != 'waiting'">
+                        Waiting for the attendance agent to add this employee to the readers.
+                        This usually happens within a few minutes.
+                    </div>
+                    <div class="alert alert-warning" role="alert"
+                         invisible="biometric_sync_state != 'partial'">
+                        This employee reached some readers but not all of them. If this persists,
+                        check that every reader is online.
+                    </div>
+                    <div class="alert alert-success" role="alert"
+                         invisible="biometric_sync_state != 'synced'">
+                        This employee is on all readers. They still need to enrol a fingerprint
+                        at each one before they can clock in.
+                    </div>
                     <div class="oe_button_box" name="button_box">
                         <button name="action_link_to_device_user"
                                 type="object"
