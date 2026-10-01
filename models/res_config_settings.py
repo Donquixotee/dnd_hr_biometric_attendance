@@ -1,0 +1,14 @@
+# -*- encoding: utf-8 -*-
+# This module and its content is copyright of DND Consulting.
+# - © DND Consulting 2025. All rights reserved.
+
+from odoo import fields, models
+
+
+class ResConfigSettings(models.TransientModel):
+    """Inherits ResConfigSettings to add a configuration parameter
+    for minimal attendance in the HR Biometric Attendance module."""
+    _inherit = 'res.config.settings'
+
+    minimal_attendance = fields.Boolean(string='Minimal Attendance',
+                                        config_parameter='dnd_hr_biometric_attendance.minimal_attendance')

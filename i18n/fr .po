@@ -1,0 +1,765 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* tis_hr_biometric_attendance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-23 12:15+0000\n"
+"PO-Revision-Date: 2025-09-23 12:15+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_device_config_view_form
+msgid "192.168.1.100"
+msgstr ""
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_device_config_view_form
+msgid "4370"
+msgstr ""
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_config__message_needaction
+msgid "Action Needed"
+msgstr "Action requise"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_config__activity_ids
+msgid "Activities"
+msgstr "Activités"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_config__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Décoration d'exception d'activité"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_config__activity_state
+msgid "Activity State"
+msgstr "État de l'activité"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_config__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icône du type d'activité"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_config__message_attachment_count
+msgid "Attachment Count"
+msgstr "Nombre de pièces jointes"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model,name:tis_hr_biometric_attendance.model_hr_attendance
+msgid "Attendance"
+msgstr "Présence"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.ui.menu,name:tis_hr_biometric_attendance.menu_biometric_attendance_management
+msgid "Attendance Management"
+msgstr "Gestion des présences"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.actions.act_window,name:tis_hr_biometric_attendance.action_view_attendance_report_wizard_form
+#: model:ir.ui.menu,name:tis_hr_biometric_attendance.menu_attendance_report_wizard
+msgid "Attendance Report"
+msgstr "Rapport de présence"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_device_config_view_form
+msgid "Authentication"
+msgstr "Authentification"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.attendance_report_wizard_form
+msgid "Back"
+msgstr "Retour"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.ui.menu,name:tis_hr_biometric_attendance.menu_biometric_attendance_root
+msgid "Biometric Attendance"
+msgstr "Présence biométrique"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_attendance_devices__device_id
+msgid "Biometric Attendance Device"
+msgstr "Appareil de présence biométrique"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.actions.act_window,name:tis_hr_biometric_attendance.action_biometric_attnd_log_view
+#: model:ir.ui.menu,name:tis_hr_biometric_attendance.menu_biometric_attnd_log
+msgid "Biometric Attendance Log"
+msgstr "Journal de présence biométrique"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_attnd_log_filter
+msgid "Biometric Attendance Search"
+msgstr "Recherche de présence biométrique"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_device_wizard__biometric_id
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_attnd_log_filter
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_attnd_log_view_tree
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_device_config_view_tree
+msgid "Biometric Device"
+msgstr "Appareil biométrique"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.actions.act_window,name:tis_hr_biometric_attendance.action_biometric_device_config_view
+#: model:ir.ui.menu,name:tis_hr_biometric_attendance.menu_biometric_device_config
+msgid "Biometric Device Config"
+msgstr "Configuration de l'appareil biométrique"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_device_config_view_form
+msgid "Biometric Device Configuration"
+msgstr "Configuration de l'appareil biométrique"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_hr_employee__biometric_device_ids
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.hr_employee_view_attendance_inherit
+msgid "Biometric Devices"
+msgstr "Appareils biométriques"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_attendance_devices__biometric_attendance_id
+msgid "Biometric User ID"
+msgstr "ID utilisateur biométrique"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.attendance_calc_wizard_form
+msgid "Calculate"
+msgstr "Calculer"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.actions.act_window,name:tis_hr_biometric_attendance.action_view_attendance_calc_wizard_form
+#: model:ir.ui.menu,name:tis_hr_biometric_attendance.menu_attendance_calc_wizard
+msgid "Calculate Attendance"
+msgstr "Calculer la présence"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.actions.server,name:tis_hr_biometric_attendance.ir_cron_scheduler_action_ir_actions_server
+#: model:ir.cron,cron_name:tis_hr_biometric_attendance.ir_cron_scheduler_action
+#: model:ir.cron,name:tis_hr_biometric_attendance.ir_cron_scheduler_action
+msgid "Calculate Attendance: run scheduler"
+msgstr "Calculer la présence : exécuter le planificateur"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.res_config_settings_general_form_inherit_zteco
+msgid "Calculate attendance for each day only."
+msgstr "Calculer la présence uniquement pour chaque jour."
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.res_config_settings_general_form_inherit_zteco
+msgid "Calculate attendance for each day."
+msgstr "Calculer la présence pour chaque jour."
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_attendance_log__is_calculated
+msgid "Calculated"
+msgstr "Calculé"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.attendance_calc_wizard_form
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.attendance_report_wizard_form
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_device_wizard_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_hr_employee__card_number
+msgid "Card Number"
+msgstr "Numéro de carte"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields.selection,name:tis_hr_biometric_attendance.selection__attendance_log__status__0
+msgid "Check In"
+msgstr "Pointage d'entrée"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields.selection,name:tis_hr_biometric_attendance.selection__attendance_log__status__1
+msgid "Check Out"
+msgstr "Pointage de sortie"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.actions.act_window,help:tis_hr_biometric_attendance.action_biometric_device_config_view
+msgid "Click to config a new biometric device."
+msgstr "Cliquez pour configurer un nouvel appareil biométrique."
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_attendance_log__company_id
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_config__company_id
+msgid "Company"
+msgstr "Société"
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_device_config_view_form
+msgid "Company this device belongs to"
+msgstr "Société à laquelle appartient cet appareil"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model,name:tis_hr_biometric_attendance.model_res_config_settings
+msgid "Config Settings"
+msgstr "Paramètres de configuration"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.ui.menu,name:tis_hr_biometric_attendance.menu_biometric_configuration
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: tis_hr_biometric_attendance
+#: code:addons/tis_hr_biometric_attendance/models/biometric_device_config.py:0
+#, python-format
+msgid "Connection Failed"
+msgstr "Échec de la connexion"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_device_config_view_form
+msgid "Connection Settings"
+msgstr "Paramètres de connexion"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.view_device_test_connection_wizard
+msgid "Connection Success"
+msgstr "Connexion réussie"
+
+#. module: tis_hr_biometric_attendance
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: tis_hr_biometric_attendance
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_attnd_log_filter
+msgid "Current Month"
+msgstr "Mois en cours"
+
+#. module: tis_hr_biometric_attendance
+msgid "Device"
+msgstr "Appareil"
+
+#. module: tis_hr_biometric_attendance
+msgid "Device IP"
+msgstr "IP de l'appareil"
+
+#. module: tis_hr_biometric_attendance
+msgid "Device Password"
+msgstr "Mot de passe de l'appareil"
+
+#. module: tis_hr_biometric_attendance
+#, python-format
+msgid "Device password should only contain numeric characters."
+msgstr "Le mot de passe de l'appareil doit uniquement contenir des chiffres."
+
+#. module: tis_hr_biometric_attendance
+msgid "Difference"
+msgstr "Différence"
+
+#. module: tis_hr_biometric_attendance
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: tis_hr_biometric_attendance
+msgid "Download Attendance"
+msgstr "Télécharger les présences"
+
+#. module: tis_hr_biometric_attendance
+msgid "Download Attendance: run scheduler"
+msgstr "Télécharger les présences : exécuter le planificateur"
+
+#. module: tis_hr_biometric_attendance
+msgid "Download attendance logs from device"
+msgstr "Télécharger les journaux de présence depuis l'appareil"
+
+#. module: tis_hr_biometric_attendance
+msgid "Employee"
+msgstr "Employé"
+
+#. module: tis_hr_biometric_attendance
+msgid "Enable if device requires password authentication"
+msgstr "Activer si l'appareil nécessite une authentification par mot de passe"
+
+#. module: tis_hr_biometric_attendance
+msgid "Enter device password"
+msgstr "Saisir le mot de passe de l'appareil"
+
+#. module: tis_hr_biometric_attendance
+msgid "Export"
+msgstr "Exporter"
+
+#. module: tis_hr_biometric_attendance
+msgid "File"
+msgstr "Fichier"
+
+#. module: tis_hr_biometric_attendance
+msgid "File Name"
+msgstr "Nom du fichier"
+
+#. module: tis_hr_biometric_attendance
+msgid "Followers"
+msgstr "Abonnés"
+
+#. module: tis_hr_biometric_attendance
+msgid "Followers (Partners)"
+msgstr "Abonnés (Partenaires)"
+
+#. module: tis_hr_biometric_attendance
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icône Font Awesome ex. : fa-tasks"
+
+#. module: tis_hr_biometric_attendance
+msgid "From"
+msgstr "De"
+
+#. module: tis_hr_biometric_attendance
+msgid "From Attendance"
+msgstr "À partir des présences"
+
+#. module: tis_hr_biometric_attendance
+msgid "From Log"
+msgstr "À partir des journaux"
+
+#. module: tis_hr_biometric_attendance
+msgid "General Settings"
+msgstr "Paramètres généraux"
+
+#. module: tis_hr_biometric_attendance
+msgid "Group By"
+msgstr "Regrouper par"
+
+#. module: tis_hr_biometric_attendance
+msgid "Has Message"
+msgstr "Contient des messages"
+
+#. module: tis_hr_biometric_attendance
+msgid "ID"
+msgstr "ID"
+
+#. module: tis_hr_biometric_attendance
+msgid "IP address of the biometric device"
+msgstr "Adresse IP de l'appareil biométrique"
+
+#. module: tis_hr_biometric_attendance
+msgid "Icon"
+msgstr "Icône"
+
+#. module: tis_hr_biometric_attendance
+msgid "Icon to indicate an exception activity."
+msgstr "Icône pour indiquer une activité exceptionnelle."
+
+#. module: tis_hr_biometric_attendance
+msgid "If checked, new messages require your attention."
+msgstr "Si coché, de nouveaux messages nécessitent votre attention."
+
+#. module: tis_hr_biometric_attendance
+msgid "If checked, some messages have a delivery error."
+msgstr "Si coché, certains messages ont une erreur de livraison."
+
+#. module: tis_hr_biometric_attendance
+msgid "Is Follower"
+msgstr "Est abonné"
+
+#. module: tis_hr_biometric_attendance
+msgid "Is Password Set"
+msgstr "Mot de passe défini"
+
+#. module: tis_hr_biometric_attendance
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: tis_hr_biometric_attendance
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: tis_hr_biometric_attendance
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: tis_hr_biometric_attendance
+msgid "Location & Time"
+msgstr "Emplacement & Heure"
+
+#. module: tis_hr_biometric_attendance
+msgid "Main Attachment"
+msgstr "Pièce jointe principale"
+
+#. module: tis_hr_biometric_attendance
+msgid "Message Delivery error"
+msgstr "Erreur de livraison du message"
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_config__message_ids
+msgid "Messages"
+msgstr "Messages"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_res_config_settings__minimal_attendance
+msgid "Minimal Attendance"
+msgstr "Présence minimale"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_attnd_log_filter
+msgid "Month"
+msgstr "Mois"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_config__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Échéance de mon activité"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_attnd_log_filter
+msgid "My Attendances"
+msgstr "Mes présences"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_config__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_device_config_view_form
+msgid "Network Configuration"
+msgstr "Configuration réseau"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_config__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Événement du calendrier de la prochaine activité"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_config__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Échéance de la prochaine activité"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_config__activity_summary
+msgid "Next Activity Summary"
+msgstr "Résumé de la prochaine activité"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_config__activity_type_id
+msgid "Next Activity Type"
+msgstr "Type de la prochaine activité"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_config__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Nombre d'actions"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_config__message_has_error_counter
+msgid "Number of errors"
+msgstr "Nombre d'erreurs"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,help:tis_hr_biometric_attendance.field_biometric_config__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Nombre de messages nécessitant une action"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,help:tis_hr_biometric_attendance.field_biometric_config__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Nombre de messages avec erreur de livraison"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,help:tis_hr_biometric_attendance.field_biometric_config__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Nombre de messages non lus"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.view_device_test_connection_wizard
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.view_employee_sync_success_wizard
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.view_success_wizard
+msgid "OK"
+msgstr "OK"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_device_config_view_form
+msgid "Organization"
+msgstr "Organisation"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_device_config_view_form
+msgid "Password for device authentication"
+msgstr "Mot de passe pour l'authentification de l'appareil"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_config__port
+msgid "Port"
+msgstr "Port"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_device_config_view_form
+msgid "Port number for device communication"
+msgstr "Numéro de port pour la communication avec l'appareil"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_attendance_report_wizard__is_printed
+msgid "Printed"
+msgstr "Imprimé"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_hr_attendance__punch_date
+msgid "Punch Date"
+msgstr "Date de pointage"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields.selection,name:tis_hr_biometric_attendance.selection__attendance_log__status__2
+msgid "Punched"
+msgstr "Pointé"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_attendance_log__punching_time
+msgid "Punching Time"
+msgstr "Heure de pointage"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields.selection,name:tis_hr_biometric_attendance.selection__biometric_device_wizard__operation_type__remove
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_device_wizard_form
+msgid "Remove"
+msgstr "Supprimer"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.actions.act_window,name:tis_hr_biometric_attendance.action_view_biometric_device_wizard_form3
+msgid "Remove from Biometric"
+msgstr "Supprimer du biométrique"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_attendance_report_wizard__report_from
+msgid "Report"
+msgstr "Rapport"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.ui.menu,name:tis_hr_biometric_attendance.menu_biometric_reports
+msgid "Reports"
+msgstr "Rapports"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_config__activity_user_id
+msgid "Responsible User"
+msgstr "Utilisateur responsable"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_config__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Erreur de livraison SMS"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields.selection,name:tis_hr_biometric_attendance.selection__biometric_device_wizard__operation_type__scan
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_device_wizard_form
+msgid "Scan"
+msgstr "Scanner"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.actions.act_window,name:tis_hr_biometric_attendance.action_view_biometric_device_wizard_form1
+msgid "Scan with Biometric"
+msgstr "Scanner avec l'appareil biométrique"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_device_wizard_form
+msgid "Select your Biometric Device"
+msgstr "Sélectionnez votre appareil biométrique"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_attendance_log__status
+msgid "Status"
+msgstr "Statut"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,help:tis_hr_biometric_attendance.field_biometric_config__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Statut basé sur les activités\n"
+"En retard : La date d'échéance est déjà passée\n"
+"Aujourd'hui : La date de l'activité est aujourd'hui\n"
+"Planifié : Activités futures."
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.view_device_test_connection_wizard
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.view_employee_sync_success_wizard
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.view_success_wizard
+msgid "Success Message"
+msgstr "Message de réussite"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.view_success_wizard
+msgid "Successfully Downloaded"
+msgstr "Téléchargé avec succès"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.view_employee_sync_success_wizard
+msgid "Successfully Synced Employees"
+msgstr "Employés synchronisés avec succès"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_device_config_view_form
+msgid "Sync Employees"
+msgstr "Synchroniser les employés"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_device_config_view_form
+msgid "Synchronize employees with the device"
+msgstr "Synchroniser les employés avec l'appareil"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_device_config_view_form
+msgid "Test Connection"
+msgstr "Tester la connexion"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_device_config_view_form
+msgid "Test connection to the biometric device"
+msgstr "Tester la connexion à l'appareil biométrique"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,help:tis_hr_biometric_attendance.field_hr_employee__card_number
+msgid ""
+"This card number is used for authentication purposes and will be passed to "
+"the biometric device"
+msgstr ""
+"Ce numéro de carte est utilisé à des fins d'authentification et sera transmis "
+"à l'appareil biométrique"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.attendance_calc_wizard_form
+msgid "This will calculate attendances till now."
+msgstr "Cela calculera les présences jusqu'à maintenant."
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_config__time_zone
+msgid "Timezone"
+msgstr "Fuseau horaire"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_device_config_view_form
+msgid "Timezone for the device location"
+msgstr "Fuseau horaire pour l'emplacement de l'appareil"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_attendance_report_wizard__date_to
+msgid "To"
+msgstr "À"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_attnd_log_filter
+msgid "Today"
+msgstr "Aujourd'hui"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.ui.menu,name:tis_hr_biometric_attendance.menu_biometric_tools
+msgid "Tools"
+msgstr "Outils"
+
+#. module: tis_hr_biometric_attendance
+#: code:addons/tis_hr_biometric_attendance/models/biometric_device_config.py:0
+#, python-format
+msgid "Two Users have same Biometric User ID %s "
+msgstr "Deux utilisateurs ont le même identifiant biométrique %s "
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_device_wizard__operation_type
+msgid "Type"
+msgstr "Type"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,help:tis_hr_biometric_attendance.field_biometric_config__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Type d'activité d'exception sur l'enregistrement."
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_config__message_unread
+msgid "Unread Messages"
+msgstr "Messages non lus"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_config__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Compteur de messages non lus"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields.selection,name:tis_hr_biometric_attendance.selection__biometric_device_wizard__operation_type__update
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_device_wizard_form
+msgid "Update"
+msgstr "Mettre à jour"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.actions.act_window,name:tis_hr_biometric_attendance.action_view_biometric_device_wizard_form2
+msgid "Update with Biometric"
+msgstr "Mettre à jour avec la biométrie"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,field_description:tis_hr_biometric_attendance.field_biometric_config__website_message_ids
+msgid "Website Messages"
+msgstr "Messages du site web"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model.fields,help:tis_hr_biometric_attendance.field_biometric_config__website_message_ids
+msgid "Website communication history"
+msgstr "Historique des communications du site web"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.res_config_settings_general_form_inherit_zteco
+msgid "ZKteco Biometric"
+msgstr "Biométrie ZKteco"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model,name:tis_hr_biometric_attendance.model_attendance_calc_wizard
+msgid "attendance calc wizard"
+msgstr "wizard de calcul des présences"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model,name:tis_hr_biometric_attendance.model_attendance_log
+msgid "attendance log"
+msgstr "journal des présences"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model,name:tis_hr_biometric_attendance.model_attendance_report_wizard
+msgid "attendance report wizard"
+msgstr "wizard de rapport de présence"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model,name:tis_hr_biometric_attendance.model_biometric_attendance_devices
+msgid "biometric attendance devices"
+msgstr "appareils biométriques de pointage"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model,name:tis_hr_biometric_attendance.model_biometric_config
+msgid "biometric config"
+msgstr "configuration biométrique"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model,name:tis_hr_biometric_attendance.model_biometric_device_wizard
+msgid "biometric device wizard"
+msgstr "wizard d'appareil biométrique"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.biometric_device_config_view_form
+msgid "e.g., Main Entrance Device"
+msgstr "ex. : Appareil d'entrée principale"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model,name:tis_hr_biometric_attendance.model_employee_sync_wizard
+#: model:ir.model,name:tis_hr_biometric_attendance.model_test_connection_wizard
+msgid "employee sync wizard"
+msgstr "wizard de synchronisation des employés"
+
+#. module: tis_hr_biometric_attendance
+#: model_terms:ir.ui.view,arch_db:tis_hr_biometric_attendance.hr_employee_view_attendance_inherit
+msgid "overtime_settingsovertime_settings"
+msgstr "paramètres_heures_supplémentaires"
+
+#. module: tis_hr_biometric_attendance
+#: model:ir.model,name:tis_hr_biometric_attendance.model_success_wizard
+msgid "success wizard"
+msgstr "wizard de succès"

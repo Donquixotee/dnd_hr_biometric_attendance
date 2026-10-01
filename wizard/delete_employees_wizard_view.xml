@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Delete Employees Wizard Form View -->
+    <record id="delete_employees_wizard_view_form" model="ir.ui.view">
+        <field name="name">delete.employees.wizard.form</field>
+        <field name="model">delete.employees.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Delete Employees from Device">
+                <group>
+                    <group>
+                        <label for="device_id" string="Device"/>
+                        <div>
+                            <field name="device_id"/>
+                        </div>
+                    </group>
+                </group>
+                <group>
+                    <field name="employee_ids" widget="many2many_tags" nolabel="1"
+                           placeholder="Select employees to delete from device..."
+                           options="{'no_create_edit': True,'no_create': True, 'no_quick_create': True}"
+                           domain="[('biometric_device_ids.device_id', '=', device_id)]"/>
+                </group>
+                <group>
+                    <field name="delete_from_odoo"/>
+                </group>
+                <div class="alert alert-warning" role="alert">
+                    <i class="fa fa-warning"/>
+                    <strong>Warning:</strong> This action will permanently delete the selected employees from the biometric device.
+                    <ul style="margin-top: 10px;">
+                        <li>Employees will no longer be able to use this device for attendance</li>
+                        <li>Their fingerprint/face data will be removed from the device</li>
+                        <li>If "Delete Link from Odoo" is checked, the device association will be removed in Odoo</li>
+                        <li>This action cannot be undone</li>
+                    </ul>
+                </div>
+                <footer>
+                    <button name="delete_employees_from_device" string="Delete from Device"
+                            type="object" class="btn-danger"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action for Delete Employees Wizard from Device Form -->
+    <record id="action_delete_employees_wizard_from_device" model="ir.actions.act_window">
+        <field name="name">Delete Employees from Device</field>
+        <field name="res_model">delete.employees.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_biometric_config"/>
+        <field name="binding_view_types">form</field>
+    </record>
+
+    <!-- Action for Delete Employees from Device (from Employee List) -->
+    <record id="action_delete_employees_from_device_multi" model="ir.actions.act_window">
+        <field name="name">Delete from Biometric Device</field>
+        <field name="res_model">delete.employees.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="hr.model_hr_employee"/>
+        <field name="binding_view_types">list</field>
+    </record>
+</odoo>
