@@ -60,12 +60,10 @@ class AttendanceReportWizard(models.TransientModel):
             fl = self.print_attendance_records(attendances)
 
         output = base64.encodebytes(fl[1])
-        context = self.env.args
-        ctx = dict(context[2])
-        ctx.update({'report_file': output})
-        ctx.update({'file': fl[0]})
+        ctx = dict(self.env.context)
+        ctx.update({'report_file': output, 'file': fl[0]})
         self.report_name = fl[0]
-        self.report_file = ctx['report_file']
+        self.report_file = output
         self.is_printed = True
 
         return {

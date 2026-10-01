@@ -25,6 +25,12 @@
                         Fill in the Badge ID above. Until then this employee is not sent to the
                         attendance readers and their punches cannot be recorded.
                     </div>
+                    <div class="alert alert-danger" role="alert"
+                         invisible="biometric_sync_state != 'badge_unusable'">
+                        This Badge ID cannot be used by the attendance readers. It must be digits
+                        only and no longer than 9 of them. Do not use the Generate button, which
+                        produces a 12 digit number. Type the number printed on the badge instead.
+                    </div>
                     <div class="alert alert-info" role="alert"
                          invisible="biometric_sync_state != 'waiting'">
                         Waiting for the attendance agent to add this employee to the readers.

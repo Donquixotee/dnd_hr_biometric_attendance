@@ -22,6 +22,7 @@ class HrEmployee(models.Model):
                               help="This card number is used for authentication purposes and will be passed to the biometric device")
 
     biometric_sync_state = fields.Selection([('no_badge', 'Needs a badge number'),
+                                             ('badge_unusable', 'Badge number not usable'),
                                              ('waiting', 'Waiting to be sent'),
                                              ('partial', 'On some readers'),
                                              ('synced', 'On all readers')],
@@ -40,6 +41,8 @@ class HrEmployee(models.Model):
                 employee.biometric_sync_state = 'partial'
             elif employee._usable_badge(employee.barcode):
                 employee.biometric_sync_state = 'waiting'
+            elif (employee.barcode or '').strip():
+                employee.biometric_sync_state = 'badge_unusable'
             else:
                 employee.biometric_sync_state = 'no_badge'
 

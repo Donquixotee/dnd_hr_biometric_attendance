@@ -110,3 +110,18 @@ class TestPendingDeviceUsers(BiometricCase):
         self.env['biometric.config'].action_confirm_device_users(
             'SERIAL-TEST-1', [{'employee_id': entry['employee_id'], 'pin': entry['pin'], 'ok': True}])
         self.assertNotIn(employee.id, [item['employee_id'] for item in self.pending()['pending']])
+
+    def test_odoo_generated_badge_is_reported_as_unusable(self):
+        employee = self.env['hr.employee'].create({'name': 'GENERATED'})
+        employee.generate_random_barcode()
+        self.assertEqual(len(employee.barcode), 12)
+        self.assertEqual(employee.biometric_sync_state, 'badge_unusable')
+
+    def test_an_unusable_badge_is_never_sent_to_a_reader(self):
+        employee = self.env['hr.employee'].create({'name': 'TOO LONG', 'barcode': '041123456789'})
+        pending = self.env['biometric.config'].action_pending_device_users('SERIAL-TEST-1')['pending']
+        self.assertNotIn(employee.id, [item['employee_id'] for item in pending])
+
+    def test_a_non_numeric_badge_is_reported_as_unusable(self):
+        employee = self.env['hr.employee'].create({'name': 'LETTERS', 'barcode': 'ABC123'})
+        self.assertEqual(employee.biometric_sync_state, 'badge_unusable')
