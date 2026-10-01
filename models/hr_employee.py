@@ -33,16 +33,15 @@ class HrEmployee(models.Model):
     def _compute_biometric_sync_state(self):
         device_count = self.env['biometric.config'].search_count([('connection_mode', '=', 'agent')])
         for employee in self:
-            if not employee._usable_badge(employee.barcode):
-                employee.biometric_sync_state = 'no_badge'
-                continue
             linked = len(employee.biometric_device_ids.mapped('device_id'))
             if device_count and linked >= device_count:
                 employee.biometric_sync_state = 'synced'
             elif linked:
                 employee.biometric_sync_state = 'partial'
-            else:
+            elif employee._usable_badge(employee.barcode):
                 employee.biometric_sync_state = 'waiting'
+            else:
+                employee.biometric_sync_state = 'no_badge'
 
     @api.model
     def _usable_badge(self, value):
