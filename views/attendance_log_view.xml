@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- List view for Biometric Attendance Logs -->
+    <record id="biometric_attnd_log_view_tree" model="ir.ui.view">
+        <field name="name">biometric.attnd.log.tree</field>
+        <field name="model">attendance.log</field>
+        <field name="arch" type="xml">
+            <list string="Biometric Device" create="false" edit="false" delete="false">
+                <field name="employee_id"/>
+                <field name="punching_time"/>
+                <field name="status"/>
+                <field name="device"/>
+                <field name="work_location_id"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Search view for Biometric Attendance Logs -->
+    <record id="biometric_attnd_log_filter" model="ir.ui.view">
+        <field name="name">biometric.attnd.log.filter</field>
+        <field name="model">attendance.log</field>
+        <field name="arch" type="xml">
+            <search string="Biometric Attendance Search">
+                <field name="employee_id"/>
+                <field name="device"/>
+                <field name="work_location_id"/>
+                <filter name="today" string="Today"
+                        domain="[('punching_time', '&gt;=', (context_today()).strftime('%Y-%m-%d 00:00:00')),('punching_time', '&lt;=', (context_today()).strftime('%Y-%m-%d 23:59:59'))]"/>
+                <filter name="current_month" string="Current Month"
+                        domain="[('punching_time', '&gt;=', (context_today().replace(day=1)).strftime('%Y-%m-%d'))]"/>
+                <separator/>
+                <filter name="my_attendances" string="My Attendances"
+                        domain="[('employee_id.user_id.id', '=', uid)]"/>
+                <group expand="0" string="Group By">
+                    <filter name="employee" string="Employee"
+                            context="{'group_by':'employee_id'}"/>
+                    <separator/>
+                    <filter name="groupby_name" string="Month"
+                            context="{'group_by':'punching_time:month'}"/>
+                    <filter name="device" string="Biometric Device"
+                            context="{'group_by':'device'}"/>
+                    <filter name="location" string="Work Location"
+                            context="{'group_by':'work_location_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action for Biometric Attendance Log -->
+    <record id="action_biometric_attnd_log_view" model="ir.actions.act_window">
+        <field name="name">Biometric Attendance Log</field>
+        <field name="res_model">attendance.log</field>
+        <field name="view_mode">list</field>
+        <field name="context">{"search_default_today":1}</field>
+        <field name="search_view_id" ref="biometric_attnd_log_filter"/>
+    </record>
+
+</odoo>

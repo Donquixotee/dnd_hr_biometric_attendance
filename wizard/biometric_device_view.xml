@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form view for the Biometric Device Wizard -->
+    <record id="biometric_device_wizard_form" model="ir.ui.view">
+        <field name="name">biometric.device.wizard.form</field>
+        <field name="model">biometric.device.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <p class="oe_grey">
+                    <h5>Select your Biometric Device</h5>
+                </p>
+                <group colspan="4">
+                    <group>
+                        <field name="operation_type" invisible="1"/>
+                        <field name="biometric_id" options="{'no_create_edit': True,'no_create': True, 'no_quick_create': True}"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="confirm_update_with_biometric"
+                            type="object" class="oe_highlight" string="Update"
+                            invisible="operation_type != 'update'"/>
+                    <button name="confirm_scan_with_biometric"
+                            type="object" class="oe_highlight" string="Scan"
+                            invisible="operation_type != 'scan'"/>
+                    <button name="remove_employee_from_biometric"
+                            type="object" class="oe_highlight" string="Remove"
+                            invisible="operation_type != 'remove'"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action to open the Biometric Device Wizard form for scanning biometric data -->
+    <record id="action_view_biometric_device_wizard_form1" model="ir.actions.act_window">
+        <field name="name">Scan with Biometric</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">biometric.device.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="binding_model_id" ref="hr.model_hr_employee"/>
+        <field name="view_id" ref="biometric_device_wizard_form"/>
+        <field name="context">{'default_operation_type': 'scan'}</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- Action to open the Biometric Device Wizard form for updating biometric data -->
+    <record id="action_view_biometric_device_wizard_form2" model="ir.actions.act_window">
+        <field name="name">Update with Biometric</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">biometric.device.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="binding_model_id" ref="hr.model_hr_employee"/>
+        <field name="view_id" ref="biometric_device_wizard_form"/>
+        <field name="context">{'default_operation_type': 'update'}</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- Action to open the Biometric Device Wizard form for removing biometric data -->
+    <record id="action_view_biometric_device_wizard_form3" model="ir.actions.act_window">
+        <field name="name">Remove from Biometric</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">biometric.device.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="binding_model_id" ref="hr.model_hr_employee"/>
+        <field name="view_id" ref="biometric_device_wizard_form"/>
+        <field name="context">{'default_operation_type': 'remove'}</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

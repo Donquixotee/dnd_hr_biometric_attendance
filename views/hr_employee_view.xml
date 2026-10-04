@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Employee Inherited View -->
+    <record id="hr_employee_view_attendance_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.view.attendance.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <!-- Adding card_number field inside the identification group -->
+            <xpath expr="//group[@name='identification_group']" position="inside">
+                <field name="card_number"/>
+                <field name="biometric_sync_state"/>
+            </xpath>
+            <!-- Adding a new Biometric Devices tab after HR Settings -->
+            <xpath expr="//page[@name='hr_settings']" position="after">
+                <page string="Biometric Devices">
+                    <group>
+                        <group>
+                            <field name="barcode" string="Badge ID"/>
+                            <field name="biometric_sync_state"/>
+                        </group>
+                    </group>
+                    <div class="alert alert-warning" role="alert"
+                         invisible="biometric_sync_state != 'no_badge'">
+                        Fill in the Badge ID above. Until then this employee is not sent to the
+                        attendance readers and their punches cannot be recorded.
+                    </div>
+                    <div class="alert alert-danger" role="alert"
+                         invisible="biometric_sync_state != 'badge_unusable'">
+                        This Badge ID cannot be used by the attendance readers. It must be digits
+                        only and no longer than 9 of them. Do not use the Generate button, which
+                        produces a 12 digit number. Type the number printed on the badge instead.
+                    </div>
+                    <div class="alert alert-info" role="alert"
+                         invisible="biometric_sync_state != 'waiting'">
+                        Waiting for the attendance agent to add this employee to the readers.
+                        This usually happens within a few minutes.
+                    </div>
+                    <div class="alert alert-warning" role="alert"
+                         invisible="biometric_sync_state != 'partial'">
+                        This employee reached some readers but not all of them. If this persists,
+                        check that every reader is online.
+                    </div>
+                    <div class="alert alert-success" role="alert"
+                         invisible="biometric_sync_state != 'synced'">
+                        This employee is on all readers. They still need to enrol a fingerprint
+                        at each one before they can clock in.
+                    </div>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_link_to_device_user"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-link"
+                                string="Link to Device User"
+                                help="Manually link this employee to an existing user on a biometric device"/>
+                    </div>
+                    <field name="biometric_device_ids" readonly="1">
+                        <list editable="bottom">
+                            <field name="biometric_attendance_id"/>
+                            <field name="device_id"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

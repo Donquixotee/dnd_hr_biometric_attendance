@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="biometric_device_config_view_form" model="ir.ui.view">
+        <field name="name">biometric.config.form</field>
+        <field name="model">biometric.config</field>
+        <field name="arch" type="xml">
+            <form string="Biometric Device Configuration" class="oe_form_biometric">
+                <sheet>
+
+                    <!-- Header Buttons -->
+                    <div class="oe_button_box" name="button_box">
+                        <button name="test_device_connection" class="oe_stat_button" type="object"
+                                icon="fa-plug" string="Test Connection"
+                                help="Test connection to the biometric device"/>
+                        <button name="get_device_info" class="oe_stat_button" type="object"
+                                icon="fa-info-circle" string="Get Device Info"
+                                help="Retrieve device information (firmware, serial number, etc.)"/>
+
+                        <button class="oe_stat_button" name="action_view_device_users" type="object" icon="fa-users">
+                            <field name="device_users_count" widget="statinfo" string="Device Users"/>
+                        </button>
+
+                        <button class="oe_stat_button" name="action_view_unmapped_users" type="object" icon="fa-user-times"
+                                invisible="users_in_device_not_in_odoo_count == 0">
+                            <field name="users_in_device_not_in_odoo_count" widget="statinfo" string="Unmapped Users"/>
+                        </button>
+
+                        <button class="oe_stat_button" name="action_view_unsynced_employees" type="object" icon="fa-user-plus"
+                                invisible="users_in_odoo_not_in_device_count == 0">
+                            <field name="users_in_odoo_not_in_device_count" widget="statinfo" string="Not in Device"/>
+                        </button>
+
+                        <button name="sync_employees" class="oe_stat_button" type="object"
+                                icon="fa-upload" string="Upload to Device"
+                                help="Upload Odoo employees to the device"/>
+                        <button name="sync_employees_from_device" class="oe_stat_button" type="object"
+                                icon="fa-download" string="Import from Device"
+                                help="Import users from device to Odoo"/>
+                        <button name="%(action_delete_employees_wizard_from_device)d" class="oe_stat_button"
+                                type="action" icon="fa-trash" string="Delete from Device"
+                                context="{'default_device_id': id}"
+                                help="Delete selected employees from the device"/>
+                        <button name="download_attendance_log" class="oe_stat_button" type="object"
+                                icon="fa-clock-o" string="Download Attendance"
+                                help="Download attendance logs from the device"/>
+                    </div>
+
+                    <!-- Title and Key Info -->
+                    <div class="oe_title" name="title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" placeholder="e.g., Main Entrance Device" required="1"/>
+                        </h1>
+                    </div>
+
+                    <!-- Key Information Bar -->
+                    <group col="3" class="o_key_info_group" name="key_info_group">
+                        <group>
+                            <field name="location_id" required="1"
+                                help="Physical location where this device is installed"/>
+                        </group>
+                        <group>
+                            <field name="company_id" groups="base.group_multi_company"
+                                help="Company this device belongs to"/>
+                        </group>
+                        <group>
+                            <field name="time_zone" required="1"
+                                help="Timezone for the device location"/>
+                        </group>
+                    </group>
+
+                    <!-- Notebook Tabs -->
+                    <notebook>
+
+                        <!-- Connection Settings -->
+                        <page string="Connection Settings" name="connection">
+                            <group col="2">
+                                <group string="Network Configuration">
+                                    <field name="device_ip" placeholder="192.168.1.100" required="1"
+                                        help="IP address of the biometric device"/>
+                                    <field name="port" placeholder="4370" required="1"
+                                        help="Port number for device communication"/>
+                                </group>
+
+                                <group string="Authentication">
+                                    <field name="is_password_set"
+                                        help="Enable if the device requires password authentication"/>
+                                    <field name="device_password" password="True" placeholder="Enter device password"
+                                        invisible="not is_password_set"
+                                        required="is_password_set"
+                                        help="Password for device authentication"/>
+                                </group>
+
+                                <group string="Deployment">
+                                    <field name="punch_direction" widget="radio"/>
+                                    <field name="connection_mode" widget="radio"/>
+                                    <field name="agent_last_seen" invisible="connection_mode != 'agent'"/>
+                                </group>
+
+                                <group string="Advanced Transport" invisible="connection_mode == 'agent'">
+                                    <field name="conn_timeout"/>
+                                    <field name="force_udp"/>
+                                    <field name="ommit_ping"/>
+                                </group>
+                            </group>
+                        </page>
+
+                        <!-- Device Information -->
+                        <page string="Device Information" name="device_info">
+                            <group col="2">
+                                <group string="Hardware Details">
+                                    <field name="device_name" readonly="1"/>
+                                    <field name="oem_vendor" readonly="1"/>
+                                    <field name="serialnumber" readonly="1"/>
+                                    <field name="platform" readonly="1"/>
+                                </group>
+
+                                <group string="Firmware &amp; Software">
+                                    <field name="firmware_version" readonly="1"/>
+                                    <field name="fingerprint_algorithm" readonly="1"/>
+                                    <field name="work_code" readonly="1"/>
+                                </group>
+                            </group>
+
+                            <separator string="Information" colspan="2"/>
+                            <div class="alert alert-info" role="alert" style="margin-top:10px;">
+                                <i class="fa fa-info-circle text-primary"/>
+                                <strong> Tip:</strong> Click <em>“Get Device Info”</em> above to retrieve and populate device information.
+                            </div>
+                        </page>
+                    </notebook>
+                </sheet>
+
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- List View for Biometric Device Configuration -->
+    <record id="biometric_device_config_view_tree" model="ir.ui.view">
+        <field name="name">biometric.config.tree</field>
+        <field name="model">biometric.config</field>
+        <field name="arch" type="xml">
+            <list string="Biometric Device">
+                <field name="name" />
+                <field name="device_ip" />
+                <field name="location_id" />
+                <field name="port" />
+                <field name="time_zone" />
+            </list>
+        </field>
+    </record>
+
+    <!-- Action for Biometric Device Configuration -->
+    <record id="action_biometric_device_config_view" model="ir.actions.act_window">
+        <field name="name">Biometric Device Config</field>
+        <field name="res_model">biometric.config</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to config a new biometric device.
+            </p>
+        </field>
+    </record>
+
+</odoo>

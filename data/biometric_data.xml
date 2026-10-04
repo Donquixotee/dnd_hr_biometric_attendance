@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Biometric: Download Attendance Logs -->
+        <record id="ir_cron_biometric_download" model="ir.cron" forcecreate="True">
+            <field name="name">Biometric: Download Attendance Logs</field>
+            <field name="model_id" ref="model_biometric_config" />
+            <field name="state">code</field>
+            <field name="code">model.download_attendance_log_new()</field>
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">5</field>
+            <field name="interval_type">minutes</field>
+            <field name="active" eval="True" />
+            <!-- Priority: higher number = runs first -->
+            <field name="priority" eval="100" />
+        </record>
+
+        <!-- Biometric: Calculate Attendance -->
+        <record id="ir_cron_biometric_calculate" model="ir.cron" forcecreate="True">
+            <field name="name">Biometric: Calculate Attendance</field>
+            <field name="model_id" ref="model_attendance_calc_wizard" />
+            <field name="state">code</field>
+            <field name="code">model.calculate_attendance()</field>
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">5</field>
+            <field name="interval_type">minutes</field>
+            <field name="active" eval="True" />
+            <!-- Run right after download -->
+            <field name="priority" eval="99" />
+        </record>
+
+    </data>
+</odoo>

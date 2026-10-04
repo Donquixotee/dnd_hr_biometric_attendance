@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Biometric Attendance App Menu -->
+    <menuitem id="menu_biometric_attendance_root"
+              name="Biometric Attendance"
+              sequence="50"
+              web_icon="dnd_hr_biometric_attendance,static/description/icon.png"/>
+
+    <!-- Configuration Submenu -->
+    <menuitem id="menu_biometric_configuration"
+              name="Configuration"
+              parent="menu_biometric_attendance_root"
+              sequence="10"
+              groups="hr_attendance.group_hr_attendance_manager"/>
+
+    <!-- Device Configuration Menu -->
+    <menuitem action="action_biometric_device_config_view"
+              id="menu_biometric_device_config"
+              parent="menu_biometric_configuration"
+              sequence="10"
+              groups="hr_attendance.group_hr_attendance_manager"/>
+
+    <!-- Attendance Management Submenu -->
+    <menuitem id="menu_biometric_attendance_management"
+              name="Attendance Management"
+              parent="menu_biometric_attendance_root"
+              sequence="20"
+              groups="hr_attendance.group_hr_attendance_manager"/>
+
+    <!-- Biometric Attendance Log Menu -->
+    <menuitem action="action_biometric_attnd_log_view"
+              id="menu_biometric_attnd_log"
+              parent="menu_biometric_attendance_management"
+              sequence="10"
+              groups="hr_attendance.group_hr_attendance_manager"/>
+
+    <!-- Reports Submenu -->
+    <menuitem id="menu_biometric_reports"
+              name="Reports"
+              parent="menu_biometric_attendance_root"
+              sequence="30"
+              groups="hr_attendance.group_hr_attendance_manager"/>
+
+    <!-- Attendance Report Menu -->
+    <menuitem action="action_view_attendance_report_wizard_form"
+              id="menu_attendance_report_wizard"
+              parent="menu_biometric_reports"
+              sequence="10"
+              groups="hr_attendance.group_hr_attendance_manager"/>
+
+    <!-- Tools Submenu -->
+    <menuitem id="menu_biometric_tools"
+              name="Tools"
+              parent="menu_biometric_attendance_root"
+              sequence="40"
+              groups="hr_attendance.group_hr_attendance_manager"/>
+
+    <!-- Calculate Attendance Menu -->
+    <menuitem action="action_view_attendance_calc_wizard_form"
+              id="menu_attendance_calc_wizard"
+              parent="menu_biometric_tools"
+              sequence="10"
+              groups="hr_attendance.group_hr_attendance_manager"/>
+</odoo>
