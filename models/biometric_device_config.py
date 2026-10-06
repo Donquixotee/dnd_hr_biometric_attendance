@@ -16,6 +16,7 @@ from ..zk import ZK
 _logger = logging.getLogger(__name__)
 
 DEVICE_TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
+PAIRING_HOURS_PARAMETER = 'dnd_hr_biometric_attendance.attendance_pairing_hours'
 DEFAULT_CONN_TIMEOUT = 60
 CHECK_IN = '0'
 CHECK_OUT = '1'

@@ -97,7 +97,8 @@ Enrolling somebody on a reader does not create them in Odoo.
 
 Pairing rules:
 
-- A check out closes a check in **from the same calendar day**, in the reader's timezone.
+- A check out closes a check in **from the same calendar day**, in the reader's timezone,
+  unless a pairing window is configured.
 - A check out with no matching check in that day is logged and skipped, never attached to an
   older record.
 - A check in while already checked in is skipped.
@@ -106,6 +107,19 @@ Pairing rules:
 
 Somebody who forgets to badge out is left with an open attendance, which is visible in the
 Attendances app for HR to correct.
+
+### Shifts that cross midnight
+
+By default a check out only closes a check in from the same calendar day. A shift running from
+22:00 to 06:00, or an evening shift that overruns past midnight, would never pair and the person
+is left with an open attendance.
+
+Set **Pairing Window (hours)** under Settings, Attendances, to the longest shift plus any
+expected overrun. A check out then closes the most recent check in within that many hours,
+whatever the date. Leave it at 0 for sites that work only within a calendar day.
+
+Shifts such as 07:30 to 15:30 and 15:30 to 23:30 stay inside one day and need no window, but a
+window still protects against somebody badging out after midnight.
 
 ### Scheduled jobs
 

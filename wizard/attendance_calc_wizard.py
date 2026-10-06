@@ -74,7 +74,7 @@ class AttendanceWizard(models.TransientModel):
                                           'check_in': log.punching_time})
 
     def _close_earlier_open_attendances(self, log):
-        day_start, _ = self._local_day_bounds(log.punching_time, log.device_id.time_zone)
+        day_start, _ = self._pairing_bounds(log)
         stale = self.env['hr.attendance'].search(
             [('employee_id', '=', log.employee_id.id), ('check_out', '=', False),
              ('check_in', '<', day_start)])
@@ -84,13 +84,27 @@ class AttendanceWizard(models.TransientModel):
             _logger.info("Closed stale attendance for %s opened %s at end of that day",
                          log.employee_id.name, attendance.check_in)
 
+    def _pairing_hours(self):
+        value = self.env['ir.config_parameter'].sudo().get_param(
+            'dnd_hr_biometric_attendance.attendance_pairing_hours')
+        try:
+            return max(0, int(value or 0))
+        except (TypeError, ValueError):
+            return 0
+
+    def _pairing_bounds(self, log):
+        hours = self._pairing_hours()
+        if hours:
+            return log.punching_time - timedelta(hours=hours), log.punching_time
+        return self._local_day_bounds(log.punching_time, log.device_id.time_zone)
+
     def _open_attendance_same_day(self, log):
         if not log.punching_time or not log.employee_id:
             return self.env['hr.attendance']
-        day_start, day_end = self._local_day_bounds(log.punching_time, log.device_id.time_zone)
+        earliest, latest = self._pairing_bounds(log)
         return self.env['hr.attendance'].search(
             [('employee_id', '=', log.employee_id.id), ('check_out', '=', False),
-             ('check_in', '>=', day_start), ('check_in', '<=', day_end)],
+             ('check_in', '>=', earliest), ('check_in', '<=', latest)],
             order='check_in desc', limit=1)
 
     def _local_day_bounds(self, moment, time_zone):

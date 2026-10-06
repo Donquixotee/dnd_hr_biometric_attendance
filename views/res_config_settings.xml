@@ -21,6 +21,19 @@
                         </div>
                     </div>
                 </div>
+                <div class="row mt16 o_settings_container" name="attendance_pairing_hours">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="attendance_pairing_hours" class="o_form_label"/>
+                            <div class="text-muted">
+                                How long after a check in a check out may still close it.
+                                Leave at 0 to pair only within the same calendar day.
+                                Raise it above your longest shift if people work across midnight.
+                            </div>
+                            <field name="attendance_pairing_hours"/>
+                        </div>
+                    </div>
+                </div>
             </xpath>
         </field>
     </record>

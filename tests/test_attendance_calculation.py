@@ -161,3 +161,77 @@ class TestSameDayPairing(BiometricCase):
         self.assertTrue(stale.check_out)
         self.assertEqual(stale.check_out.date(), stale.check_in.date())
         self.assertTrue(all(self.logs().mapped('is_calculated')))
+
+
+@tagged('post_install', '-at_install')
+class TestPairingWindow(BiometricCase):
+
+    def setUp(self):
+        super().setUp()
+        parameters = self.env['ir.config_parameter'].sudo()
+        parameters.set_param('dnd_hr_biometric_attendance.minimal_attendance', '')
+        self.exit_device = self.env['biometric.config'].create({
+            'name': 'Exit', 'device_ip': '192.168.1.200', 'port': 4370,
+            'time_zone': 'Africa/Algiers', 'serialnumber': 'SERIAL-WINDOW',
+            'connection_mode': 'agent', 'punch_direction': 'out'})
+        self.env['biometric.attendance.devices'].create({
+            'employee_id': self.employee.id, 'biometric_attendance_id': '7',
+            'device_id': self.exit_device.id})
+        self.device.punch_direction = 'in'
+
+    def set_window(self, hours):
+        self.env['ir.config_parameter'].sudo().set_param(
+            'dnd_hr_biometric_attendance.attendance_pairing_hours', str(hours))
+
+    def calculate(self):
+        self.env['attendance.calc.wizard'].calculate_attendance()
+
+    def attendance(self):
+        return self.env['hr.attendance'].search(
+            [('employee_id', '=', self.employee.id)], order='check_in')
+
+    def work(self, check_in, check_out):
+        self.device.process_punches([self.punch('7', check_in)])
+        self.exit_device.process_punches([self.punch('7', check_out)])
+        self.calculate()
+
+    def test_evening_shift_ending_before_midnight_pairs_with_no_window(self):
+        self.set_window(0)
+        self.work('2026-09-01 15:30:00', '2026-09-01 23:30:00')
+        self.assertTrue(self.attendance().check_out)
+
+    def test_overrunning_past_midnight_is_lost_with_no_window(self):
+        self.set_window(0)
+        self.work('2026-09-01 15:30:00', '2026-09-02 00:15:00')
+        self.assertFalse(self.attendance().check_out)
+
+    def test_a_window_rescues_the_overrun(self):
+        self.set_window(12)
+        self.work('2026-09-01 15:30:00', '2026-09-02 00:15:00')
+        self.assertTrue(self.attendance().check_out)
+
+    def test_a_true_night_shift_pairs_within_the_window(self):
+        self.set_window(12)
+        self.work('2026-09-01 23:30:00', '2026-09-02 07:30:00')
+        attendance = self.attendance()
+        self.assertEqual(len(attendance), 1)
+        self.assertTrue(attendance.check_out)
+
+    def test_the_window_still_refuses_something_far_older(self):
+        self.set_window(12)
+        self.env['hr.attendance'].create({
+            'employee_id': self.employee.id, 'check_in': '2026-05-11 12:43:26'})
+        self.exit_device.process_punches([self.punch('7', '2026-09-01 17:00:00')])
+        self.calculate()
+        stale = self.env['hr.attendance'].search(
+            [('employee_id', '=', self.employee.id), ('check_in', '<', '2026-09-01')])
+        self.assertNotEqual(stale.check_out and stale.check_out.date().isoformat(), '2026-09-01')
+
+    def test_day_shift_is_unaffected_either_way(self):
+        for hours in (0, 12):
+            self.set_window(hours)
+            self.env['hr.attendance'].search([('employee_id', '=', self.employee.id)]).unlink()
+            self.env['attendance.log'].search([]).write({'is_calculated': False})
+            self.env['attendance.log'].search([]).unlink()
+            self.work('2026-09-01 07:30:00', '2026-09-01 15:30:00')
+            self.assertTrue(self.attendance().check_out, 'failed with window=%s' % hours)
