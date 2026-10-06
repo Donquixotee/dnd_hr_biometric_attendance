@@ -5,11 +5,11 @@
         <field name="name">biometric.attendance.devices.tree</field>
         <field name="model">biometric.attendance.devices</field>
         <field name="arch" type="xml">
-            <list string="Device User Links" editable="bottom" delete="true">
+            <tree string="Device User Links" editable="bottom" delete="true">
                 <field name="employee_id" readonly="1"/>
                 <field name="device_id" readonly="1"/>
                 <field name="biometric_attendance_id" readonly="1"/>
-            </list>
+            </tree>
         </field>
     </record>
 
@@ -38,7 +38,7 @@
     <record id="action_biometric_attendance_devices" model="ir.actions.act_window">
         <field name="name">Device User Links</field>
         <field name="res_model">biometric.attendance.devices</field>
-        <field name="view_mode">list,form</field>
+        <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 No device user links found

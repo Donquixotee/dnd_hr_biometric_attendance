@@ -55,10 +55,10 @@
                                 help="Manually link this employee to an existing user on a biometric device"/>
                     </div>
                     <field name="biometric_device_ids" readonly="1">
-                        <list editable="bottom">
+                        <tree editable="bottom">
                             <field name="biometric_attendance_id"/>
                             <field name="device_id"/>
-                        </list>
+                        </tree>
                     </field>
                 </page>
             </xpath>

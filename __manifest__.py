@@ -5,7 +5,7 @@
 
 {
     'name': 'ZKteco Biometric Attendance Integration',
-    'version': '18.0.1.0',
+    'version': '17.0.1.0',
     'category': 'Human Resources',
     'sequence': 1,
     'author': 'DND Consulting - Amraoui Sofiane',

@@ -1,13 +1,13 @@
-# ZKTeco Biometric Attendance Integration
+# ZKTeco Biometric Attendance Integration (Odoo 17)
 
-Records employee attendance in Odoo 18 from ZKTeco biometric readers.
+Records employee attendance in Odoo 17 from ZKTeco biometric readers.
 
 Punches are collected from the readers, stored as attendance logs, and paired into standard
 `hr.attendance` records, so the regular Attendances app, reporting and payroll work unchanged.
 
 ## Requirements
 
-- Odoo 18.0
+- Odoo 17.0
 - `hr_attendance`
 - Network access to the readers on TCP/UDP port 4370
 
